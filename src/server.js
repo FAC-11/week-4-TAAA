@@ -6,43 +6,50 @@ const path = require('path');
 const port = 3000;
 
 const handler = (request, response) => {
-  const endpoint = request.url;
+var endpoint = request.url;
   const method = request.method;
 
-  console.log(endpoint, ', ', method);
 
+  console.log(endpoint + ', ' + method);
+  console.log (typeof(endpoint));
 
   const contentType = {
     '/favicon.ico': 'image/x-icon',
     '/index.html': 'text/html',
     '/main.css': 'text/css',
-    '/script.js': 'application/javascript',
+    '/dom.js': 'application/javascript',
+    '/logic.js': 'application/javascript',
     '/img/image.jpg': 'image/jpeg',
   };
 
-  if (endpoint === '/') {
+  if (endpoint.startsWith ('/API')) {
+    console.log('received API request. \nsee HTML.');
     response.writeHead(200, { 'Content-Type': 'text/html' });
-    fs.readFile(path.join(__dirname, '..', 'public', 'index.html'), (error, file) => {
-      if (error) {
-        console.log(error);
-        return;
-      }
-          // response.write (message);
-      response.end(file);
-    });
-  } else if (endpoint in Object.keys(contentType)) {
-    response.writeHead(200, { 'Content-Type': contentType[endpoint] });
-    const ourPath = path.join(__dirname, '..', 'public', endpoint);
-    console.log(ourPath, typeof (ourPath));
+    response.end('received API request. \nfiling request in bin.\njob done.', endpoint);
+  }         /////this block ('/API' is what we need to fill in. separate out querystring.)
+  else {
 
-    fs.readFile((ourPath), (error, file) => {
-      if (error) {
-        console.log(error);
-        return;
-      }
-      response.write('serving you ...', endpoint);
-      response.end(file);
-    });
+    if (endpoint === '/') {
+      endpoint = '/index.html';
+      console.log('Got blank');
+    }
+
+    if (endpoint in contentType) {
+      response.writeHead(200, { 'Content-Type': contentType[endpoint] });
+      fs.readFile(path.join(__dirname, '..', 'public', endpoint), (error, file) => {
+        if (error) {
+          console.log(error);
+          return;
+        }
+        response.end(file);
+      });
+    }
+    else {
+      console.log ('404:',endpoint, contentType[endpoint]);
+      response.writeHead(404, { 'Content-Type': 'text/html'});
+      response.end('Nuttin');
+    }
+
   }
 };
 
