@@ -1,0 +1,30 @@
+{
+  "name": "week-4-taaa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FAC-11/week-4-TAAA.git"
+  },
+  "author": "Aseel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FAC-11/week-4-TAAA/issues"
+  },
+  "homepage": "https://github.com/FAC-11/week-4-TAAA#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0",
+    "istanbul": "^0.4.5",
+    "spec": "^1.0.1",
+    "tape": "^4.7.0"
+  }
+}
