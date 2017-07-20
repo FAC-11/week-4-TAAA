@@ -31,4 +31,4 @@ function appendAList (resultsArray) {
 }
 
 
-// appendAList(testing);
+appendAList(testing);
