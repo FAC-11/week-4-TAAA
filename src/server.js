@@ -6,7 +6,7 @@ const path = require('path');
 const port = 3000;
 
 const handler = (request, response) => {
-var endpoint = request.url;
+  let endpoint = request.url;
   const method = request.method;
 
 
@@ -22,13 +22,13 @@ var endpoint = request.url;
     '/img/image.jpg': 'image/jpeg',
   };
 
-  if (endpoint.startsWith ('/API')) {
+  if (endpoint.startsWith('/API')) {
     console.log('received API request. \nsee HTML.');
     response.writeHead(200, { 'Content-Type': 'text/html' });
     response.end('received API request. \nfiling request in bin.\njob done.', endpoint);
   }         /////this block ('/API' is what we need to fill in. separate out querystring.)
-  else {
 
+  else {
     if (endpoint === '/') {
       endpoint = '/index.html';
       console.log('Got blank');
@@ -39,6 +39,8 @@ var endpoint = request.url;
       fs.readFile(path.join(__dirname, '..', 'public', endpoint), (error, file) => {
         if (error) {
           console.log(error);
+          response.writeHead(500, { 'Content-Type': 'text/html'});
+          response.end("There was a file error at our end. Sorry about that. Go have a cup of tea or something. Maybe we'll have fixed it...");
           return;
         }
         response.end(file);
