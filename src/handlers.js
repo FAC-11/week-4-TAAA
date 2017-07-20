@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const apiRequest = require('./api.js');
 
 const handler = (request, response) => {
   let endpoint = request.url;
@@ -7,10 +8,10 @@ const handler = (request, response) => {
 
 
   console.log(endpoint + ', ' + method);
-  console.log (typeof(endpoint));
+  // console.log (typeof(endpoint));
 
   const contentType = {
-    '/favicon.ico': 'image/x-icon',
+    // '/favicon.ico': 'image/x-icon',
     '/index.html': 'text/html',
     '/main.css': 'text/css',
     '/dom.js': 'application/javascript',
@@ -19,9 +20,7 @@ const handler = (request, response) => {
   };
 
   if (endpoint.startsWith('/API')) {
-    console.log('received API request. \nsee HTML.');
-    response.writeHead(200, { 'Content-Type': 'text/html' });
-    response.end('received API request. \nfiling request in bin.\njob done.', endpoint);
+    apiRequest(endpoint, response);
   }         /////this block ('/API' is what we need to fill in. separate out querystring.)
 
   else {
