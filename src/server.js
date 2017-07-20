@@ -43,6 +43,7 @@ const handler = (request, response) => {
           response.end("There was a file error at our end. Sorry about that. Go have a cup of tea or something. Maybe we'll have fixed it...");
           return;
         }
+        response.writeHead(200, { 'Content-Type': contentType[endpoint] });
         response.end(file);
       });
     }
