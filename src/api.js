@@ -4,7 +4,7 @@ const backend = require('./backend.js');
 const dinoData = require('./dinosaurs.json');
 
 function apiRequest(endpoint, response) {
-  var queryString = endpoint.split("").slice(5).join("");
+  var queryString = endpoint.slice(5);
   console.log(queryString);
   // console.log(dinoData.dinosaurs);
 
