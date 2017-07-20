@@ -12,7 +12,7 @@ Ms Dimbles wants:
 >to be informed if there is no dinosaur names starting with her typed letters
 
 ### Stretch Goals
-- [ ] User is given random autocomplete suggestions, rather than alphabetical
+- [ ] User is given suggestions which are selected according to some logic, rather than alphabetical
 - [ ] Have a beautiful drop down menu rather than gross HTML defaults
 
 ## HOW (describing the journey to completion)
@@ -35,7 +35,19 @@ We mapped out how our website would be constructed including what data types our
 We saved our data in a JSON file on the server.
 
 ### Server Showdown
-For our server to be able to retrieve information from our client we...
+Our client page will expect a server to be able to provide updates for the menu, so out server will need some API-type functionality. We put thought into the most efficient
+
+### API considerations
+
+
+We put thought into the most efficient means of client/ server exchange of data over a given protocol, as a full API request and response will made after every keypress. We decided that arrays are a space-efficient means of storing the word data, and that the transmission overhead of an array in a JSON object could be minimised by storing the array as:
+
+`transmissionObject = {
+  var potentiallyLargeArray = ['str1','str2','strN']
+  }`
+
+
+We also considered various means other than HTTP requests for quickly exchanging client/ server data. 
 
 ### DOM Manipulation
 
