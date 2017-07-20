@@ -6,7 +6,7 @@ test('compare function', function(t){
 
   var expectedOne = ['hi'];
   var actualOne = functions.compareFunction('hi',['a','hi','hello']);
-  t.deepEqual(actualOne,expectedOne,'compareFunction returns an array');
+  t.deepEqual(actualOne,expectedOne,'compareFunction returns a matching element in an array');
 
   var expectedOne = ['hi','high'];
   var actualOne = functions.compareFunction('hi',['a','hi','hello','high', 'ahi']);
