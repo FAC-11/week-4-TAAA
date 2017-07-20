@@ -5,10 +5,8 @@ const dinoData = require('./dinosaurs.json');
 
 function apiRequest(endpoint, response) {
   var queryString = endpoint.slice(5);
-  console.log(queryString);
-  // console.log(dinoData.dinosaurs);
 
-console.log(backend.compareFunction(queryString, dinoData.dinosaurs));
+backend.compareFunction(queryString, dinoData.dinosaurs);
 
   console.log('received API request. \nsee HTML.');
   response.writeHead(200, { 'Content-Type': 'text/html' });
