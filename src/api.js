@@ -12,9 +12,9 @@ var compareFunctionResult = backend.compareFunction(queryString, dinoData.dinosa
 
   var stringifyResult = JSON.stringify(compareFunctionResult);
 
-  console.log(stringifyResult);
+  
 
-  // console.log("stringify: " + JSON.stringify(compareFunctionResult));
+  console.log("stringify: " + JSON.stringify(compareFunctionResult));
   // stringify
   response.end(stringifyResult);
 }
