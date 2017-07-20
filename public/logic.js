@@ -1,10 +1,11 @@
 var logic = {
-  sendTextToApi: function() {
+  sendTextToApi: function(cbDealWithResults) {
     var txt = document.getElementById('myInput').value;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
-        appendAList(xhr.responseText);
+        var resultsArray = JSONparse(xhr.responseText);
+        cbDealWithResults (resultsArray);
       }
     };
     xhr.open("GET", '/API?' + txt, true);
