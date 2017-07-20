@@ -4,11 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AutoComplete</title>
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="./main.css">
   </head>
   <body>
     <h1>Find What You Are Looking For!</h1>
-    <input type="text" id="myInput" oninput="logic.sendTextToApi()" label="enter your search query">
+    <section id='dropdown-section'>
+      <input type="text" id="myInput" oninput="logic.sendTextToApi()" label="enter your search query">
+      <!-- <ul id="results-list">
+      </ul> -->
+    </section>
+
+
+
   </body>
   <script type="text/javascript" src="./logic.js"></script>
+  <script type="text/javascript" src="./dom.js"></script>
 </html>
