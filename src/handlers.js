@@ -16,7 +16,7 @@ const handler = (request, response) => {
     '/main.css': 'text/css',
     '/dom.js': 'application/javascript',
     '/logic.js': 'application/javascript',
-    '/img/image.jpg': 'image/jpeg',
+    '/background.jpg': 'image/jpeg',
   };
 
   if (endpoint.startsWith('/API')) {

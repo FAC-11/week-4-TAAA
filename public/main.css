@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+  font-family : sans-serif;
+  background-image: url(./background.jpg);
+  background-size: cover;
+}
+
+h1 {
+  font-family: Dosis, sans-serif;
+  font-weight:700;
+  font-size: 5rem;
+  text-align: center;
+  margin: 3vh 0;
+  text-shadow: 4px 3px 0px #fff, -4px -3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15),-9px -8px 0px rgba(0,0,0,0.15);
+
+}
+
+ul {
+  padding: 0;
+
+}
+
+button, input {
+  display : block;
+  width: 50vw;
+  text-align: left;
+  font-family: Raleway, sans-serif;
+  font-size: 1.7rem;
+  background-color: white;
+  border: 1px solid black;
+  margin: auto;
+}
+
+button:focus, button:hover{
+  background-color: #E3E494;
+  font-weight: bold;
+}
