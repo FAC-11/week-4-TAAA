@@ -1,7 +1,3 @@
-
-var testing = ['ahab', 'Aha the band from the 80s', 'Abraham Lincoln', 'bourbons'];
-
-
 function clickable (ev) {
   var inputBox = document.getElementById('myInput');
   inputBox.value = ev.target.textContent;
@@ -29,6 +25,3 @@ function appendAList (resultsArray) {
 
   document.getElementById ('dropdown-section').appendChild(newList);
 }
-
-
-appendAList(testing);
