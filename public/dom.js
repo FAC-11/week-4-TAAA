@@ -11,7 +11,9 @@ function appendAList (resultsArray) {
   }
   var newList = document.createElement ('ul');
   if (resultsArray.length) {
-    newList.id= 'results-list';
+
+    newList.id = 'results-list';
+
     resultsArray.forEach (function(el) {
       var newButton = document.createElement ('button');
       newButton.textContent = el;

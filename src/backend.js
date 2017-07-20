@@ -1,6 +1,6 @@
 function compareFunction (string, arrayOfStrings){
   var unshrunkResults = arrayOfStrings.filter(function(el){
-    var regex = new RegExp('^'+string+'\\w*');
+    var regex = new RegExp('^'+string+'\\w*',"i");
     return el.match(regex);
   })
     return shrinkFunction(unshrunkResults);
