@@ -1,8 +1,8 @@
 const http = require('http');
 const handler = require('./handlers')
-const port = 3000;
+const port = process.env.PORT || 8080;
 
 const server = http.createServer(handler);
-server.listen(3000, () => {
+server.listen(port, () => {
   console.log('listening on ', port);
 });
