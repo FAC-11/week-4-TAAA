@@ -5,11 +5,18 @@ const dinoData = require('./dinosaurs.json');
 
 function apiRequest(endpoint, response) {
   var queryString = endpoint.slice(5);
-backend.compareFunction(queryString, dinoData.dinosaurs);
+var compareFunctionResult = backend.compareFunction(queryString, dinoData.dinosaurs);
 
   console.log('received API request. \nsee HTML.');
-  response.writeHead(200, { 'Content-Type': 'text/html' });
-  response.end('received API request. \nfiling request in bin.\njob done.', endpoint);
+  response.writeHead(200, { 'Content-Type': 'application/json' });
+
+  var stringifyResult = JSON.stringify(compareFunctionResult);
+
+  console.log(stringifyResult);
+
+  // console.log("stringify: " + JSON.stringify(compareFunctionResult));
+  // stringify
+  response.end(stringifyResult);
 }
 
 module.exports = apiRequest;
