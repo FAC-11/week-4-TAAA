@@ -8,7 +8,9 @@ function compareFunction (string, arrayOfStrings){
 
 function shrinkFunction(arrayOfStrings){
 
-var shrunkResults = arrayOfStrings.length <=  5 ? arrayOfStrings : arrayOfStrings.slice(0,5);
+var shrunkResults = (arrayOfStrings.length <=  5) ?
+                                      arrayOfStrings :
+                                       arrayOfStrings.slice(0,5);
 return shrunkResults;
 }
 
