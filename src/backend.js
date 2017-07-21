@@ -1,9 +1,17 @@
 function compareFunction (string, arrayOfStrings){
-  var unshrunkResults = arrayOfStrings.filter(function(el){
-    var regex = new RegExp('^'+string+'\\w*',"i");
-    return el.match(regex);
-  })
-    return shrinkFunction(unshrunkResults);
+  var regex = new RegExp('^'+string+'\\w*',"i");
+  var results = [];
+
+  for (var i = 0; i < arrayOfStrings.length; i++) {
+    if (results.length >= 5) {
+      break;
+    } else {
+      if (arrayOfStrings[i].match(regex)) {
+      results.push(arrayOfStrings[i]);
+      }
+    }
+  }
+    return shrinkFunction(results);
 }
 
 function shrinkFunction(arrayOfStrings){
