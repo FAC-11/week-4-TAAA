@@ -11,13 +11,7 @@ function compareFunction (string, arrayOfStrings){
       }
     }
   }
-    return shrinkFunction(results);
-}
-
-function shrinkFunction(arrayOfStrings){
-
-var shrunkResults = arrayOfStrings.length <=  5 ? arrayOfStrings : arrayOfStrings.slice(0,5);
-return shrunkResults;
+    return results;
 }
 
 module.exports = {
