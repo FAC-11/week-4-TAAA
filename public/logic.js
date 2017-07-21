@@ -1,6 +1,6 @@
-var logic = {
 
-  sendTextToApi: function(callback) {
+
+  function sendTextToApi(callback) {
 
     var txt = document.getElementById('myInput').value;
     var xhr = new XMLHttpRequest();
@@ -14,4 +14,3 @@ var logic = {
     xhr.open("GET", '/API?' + txt, true);
     xhr.send();
   }
-}
